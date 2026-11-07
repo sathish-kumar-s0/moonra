@@ -1,0 +1,21 @@
+{
+  "name": "MACTS | MoonInRed Academy of Cinema Technical Studies",
+  "short_name": "MACTS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080A",
+  "theme_color": "#07080A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/logo_emblem.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/logo_emblem.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

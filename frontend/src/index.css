@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#08090C] text-white antialiased selection:bg-[#C52222] selection:text-white font-sans;
+    overflow-x: hidden;
+  }
+
+  /* Custom Cinema Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #08090C;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2C2F3A;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C52222;
+  }
+}
+
+/* Subtle Film Grain Overlay */
+.film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cinematic Glow Accents */
+.cinema-red-glow {
+  box-shadow: 0 0 35px -5px rgba(197, 34, 34, 0.45);
+}
+
+.cinema-gold-glow {
+  box-shadow: 0 0 35px -5px rgba(201, 164, 92, 0.4);
+}
+
+/* Text glow */
+.text-glow-red {
+  text-shadow: 0 0 20px rgba(197, 34, 34, 0.6);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(201, 164, 92, 0.5);
+}
+

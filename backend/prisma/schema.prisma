@@ -1,0 +1,257 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCESS
+  FAILED
+  REFUNDED
+  MANUAL_REVIEW
+}
+
+enum RegistrationStatus {
+  SUBMITTED
+  VERIFIED
+  CONFIRMED
+  REJECTED
+  CANCELLED
+}
+
+model Admin {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          Role     @default(ADMIN)
+  status        String   @default("ACTIVE")
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model Student {
+  id                   String                @id @default(uuid())
+  full_name            String
+  age                  Int
+  gender               String
+  mobile               String
+  whatsapp             String
+  email                String
+  city                 String
+  current_status       String
+  filmmaking_interest  String
+  project_experience   String
+  interested_areas     String[]
+  created_at           DateTime              @default(now())
+  course_registrations CourseRegistration[]
+}
+
+model Course {
+  id                String                @id @default(uuid())
+  title             String
+  slug              String                @unique
+  description       String
+  duration          String
+  fee               Int                   // in paise or minor units
+  curriculum        String[]
+  banner            String
+  is_published      Boolean               @default(true)
+  featured          Boolean               @default(false)
+  created_at        DateTime              @default(now())
+  updated_at        DateTime              @updatedAt
+  registrations     CourseRegistration[]
+}
+
+model CourseRegistration {
+  id                      String             @id @default(uuid())
+  registration_number     String             @unique
+  student_id              String
+  course_id               String
+  registration_fee        Int
+  payment_method          String             @default("RAZORPAY")
+  payment_status          PaymentStatus      @default(PENDING)
+  registration_status     RegistrationStatus @default(SUBMITTED)
+  transaction_id          String?
+  payment_screenshot_url  String?
+  created_at              DateTime           @default(now())
+  updated_at              DateTime           @updatedAt
+
+  student                 Student            @relation(fields: [student_id], references: [id], onDelete: Cascade)
+  course                  Course             @relation(fields: [course_id], references: [id], onDelete: Cascade)
+}
+
+model Workshop {
+  id                    String                 @id @default(uuid())
+  title                 String
+  slug                  String                 @unique
+  description           String
+  mentor_name           String
+  banner                String
+  workshop_date         String
+  start_time            String
+  end_time              String
+  venue                 String
+  fee                   Int                    // in paise or minor units
+  seat_limit            Int
+  booked_seats          Int                    @default(0)
+  registration_deadline String
+  status                String                 @default("PUBLISHED")
+  created_at            DateTime               @default(now())
+  updated_at            DateTime               @updatedAt
+  registrations         WorkshopRegistration[]
+}
+
+model WorkshopRegistration {
+  id                    String             @id @default(uuid())
+  registration_number   String             @unique
+  workshop_id           String
+  participant_name      String
+  age                   Int
+  area                  String
+  whatsapp              String
+  email                 String
+  industry_relationship String
+  payment_status        PaymentStatus      @default(PENDING)
+  registration_status   RegistrationStatus @default(SUBMITTED)
+  amount_paid           Int
+  razorpay_order_id     String?
+  razorpay_payment_id   String?
+  created_at            DateTime           @default(now())
+  updated_at            DateTime           @updatedAt
+
+  workshop              Workshop           @relation(fields: [workshop_id], references: [id], onDelete: Cascade)
+  ticket                WorkshopTicket?
+}
+
+model Payment {
+  id                         String        @id @default(uuid())
+  registration_id            String
+  registration_type          String        // COURSE or WORKSHOP
+  provider                   String        @default("RAZORPAY")
+  provider_order_id          String?
+  provider_payment_id        String?
+  amount                     Int           // minor units
+  currency                   String        @default("INR")
+  status                     PaymentStatus @default(PENDING)
+  payment_signature_verified Boolean       @default(false)
+  created_at                 DateTime      @default(now())
+}
+
+model WorkshopTicket {
+  id                       String               @id @default(uuid())
+  ticket_number            String               @unique
+  workshop_registration_id String               @unique
+  qr_token                 String               @unique
+  pdf_url                  String?
+  delivery_status          String               @default("PENDING")
+  delivery_method          String               @default("EMAIL")
+  verified_at              DateTime?
+  generated_at             DateTime             @default(now())
+
+  registration             WorkshopRegistration @relation(fields: [workshop_registration_id], references: [id], onDelete: Cascade)
+}
+
+model Mentor {
+  id               String   @id @default(uuid())
+  name             String
+  designation      String
+  biography        String
+  experience       String
+  image_url        String
+  specialization   String?
+  featured_on_home Boolean  @default(true)
+  is_published     Boolean  @default(true)
+  created_at       DateTime @default(now())
+}
+
+model Testimonial {
+  id            String   @id @default(uuid())
+  student_name  String
+  course_name   String
+  testimonial   String
+  image_url     String?
+  video_url     String?
+  is_published  Boolean  @default(true)
+  display_order Int      @default(0)
+  created_at    DateTime @default(now())
+}
+
+model Gallery {
+  id               String   @id @default(uuid())
+  title            String
+  category         String
+  image_url        String
+  caption          String?
+  featured_on_home Boolean  @default(false)
+  created_at       DateTime @default(now())
+}
+
+model PreviousClass {
+  id                String   @id @default(uuid())
+  title             String
+  mentor_name       String
+  date              String
+  description       String
+  thumbnail_url     String
+  video_preview_url String?
+  created_at        DateTime @default(now())
+}
+
+model ContactMessage {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  phone      String
+  subject    String
+  message    String
+  status     String   @default("NEW")
+  created_at DateTime @default(now())
+}
+
+model WebsiteSetting {
+  id         String   @id @default(uuid())
+  key        String   @unique
+  value      String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model EmailLog {
+  id          String   @id @default(uuid())
+  recipient   String
+  subject     String
+  type        String
+  status      String
+  error       String?
+  sent_at     DateTime @default(now())
+}
+
+model WhatsAppLog {
+  id          String   @id @default(uuid())
+  recipient   String
+  template    String
+  status      String
+  error       String?
+  sent_at     DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(uuid())
+  admin_id   String?
+  action     String
+  resource   String
+  details    String?
+  ip_address String?
+  created_at DateTime @default(now())
+}
+
