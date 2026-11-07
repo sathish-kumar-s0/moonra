@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./MactsPreloader.css";
 
-interface MactsPreloaderProps {
+interface Props {
   isReady?: boolean;
   onComplete?: () => void;
 }
@@ -9,141 +9,133 @@ interface MactsPreloaderProps {
 export default function MactsPreloader({
   isReady = false,
   onComplete,
-}: MactsPreloaderProps) {
+}: Props) {
   const [progress, setProgress] = useState(0);
   const [exiting, setExiting] = useState(false);
 
-  // Smooth visual progress, capped until the app is actually ready.
   useEffect(() => {
-    const interval = window.setInterval(() => {
-      setProgress((current) => {
-        const target = isReady ? 100 : 92;
-        if (current >= target) return current;
-        const remaining = target - current;
+    const timer = window.setInterval(() => {
+      setProgress((value) => {
+        if (value >= (isReady ? 100 : 92)) return value;
         return Math.min(
-          target,
-          current + Math.max(0.3, remaining * 0.045)
+          isReady ? 100 : 92,
+          value + Math.max(0.25, (100 - value) * 0.035)
         );
       });
-    }, 35);
-    return () => window.clearInterval(interval);
+    }, 45);
+
+    return () => window.clearInterval(timer);
   }, [isReady]);
 
-  // Finish only after the application is ready.
   useEffect(() => {
     if (!isReady) return;
+
     setProgress(100);
-    const timer = window.setTimeout(() => {
-      setExiting(true);
-    }, 450);
+
+    const timer = window.setTimeout(() => setExiting(true), 650);
     return () => window.clearTimeout(timer);
   }, [isReady]);
 
-  // Notify parent after exit animation.
   useEffect(() => {
     if (!exiting) return;
-    const timer = window.setTimeout(() => {
-      onComplete?.();
-    }, 850);
+
+    const timer = window.setTimeout(() => onComplete?.(), 1100);
     return () => window.clearTimeout(timer);
   }, [exiting, onComplete]);
 
   return (
-    <div
-      className={`macts-preloader ${exiting ? "macts-exit" : ""}`}
-      role="status"
-      aria-label="Loading MACTS website"
-      aria-live="polite"
-    >
-      {/* Background effects */}
-      <div className="macts-noise" />
-      <div className="macts-ambient ambient-one" />
-      <div className="macts-ambient ambient-two" />
-      <div className="macts-scanline" />
+    <div className={`luxury-loader ${exiting ? "loader-exit" : ""}`}>
 
-      {/* Main content */}
-      <div className="macts-loader-content">
-        {/* Animated camera aperture */}
-        <div className="macts-aperture-wrapper">
-          <div className="macts-aperture-glow" />
-          <div className="macts-aperture-outer">
-            <div className="macts-aperture-ring">
-              <div className="macts-blades">
-                {Array.from({ length: 6 }).map((_, index) => (
-                  <div
-                    key={index}
-                    className="macts-blade"
-                    style={{
-                      transform: `rotate(${index * 60}deg)`,
-                    }}
-                  />
-                ))}
-              </div>
-              <div className="macts-aperture-center">
-                <span>M</span>
+      <div className="cinema-bg" />
+      <div className="gold-spotlight" />
+      <div className="film-edge film-left" />
+      <div className="film-edge film-right" />
+
+      <main className="luxury-content">
+
+        {/* Cinematic lens */}
+        <div className="lens-stage">
+          <div className="lens-halo" />
+          <div className="lens-orbit orbit-a" />
+          <div className="lens-orbit orbit-b" />
+
+          <div className="lens-body">
+            <div className="lens-metal">
+              <div className="lens-reflection" />
+              <div className="lens-glass">
+                <div className="lens-shutter">
+                  {Array.from({ length: 7 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="shutter-blade"
+                      style={{
+                        transform: `rotate(${i * 51.43}deg)`,
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="lens-center">
+                  <span>M</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="macts-orbit orbit-one" />
-          <div className="macts-orbit orbit-two" />
+
+          <div className="lens-light" />
         </div>
 
-        {/* Logo and academy name */}
-        <div className="macts-brand">
-          <div className="macts-logo">
-            M<span>A</span>CTS
-          </div>
-          <div className="macts-brand-line">
+        {/* Brand */}
+        <div className="luxury-brand">
+          <div className="brand-eyebrow">
+            <span />
+            MOONINRED PRESENTS
             <span />
           </div>
-          <div className="macts-academy-name">MOONINRED ACADEMY OF</div>
-          <div className="macts-academy-name second-line">
-            CINEMA TECHNICAL STUDIES
+
+          <h1>
+            M<span>A</span>CTS
+          </h1>
+
+          <div className="brand-divider">
+            <span />
+            <i>✦</i>
+            <span />
           </div>
+
+          <p>MOONINRED ACADEMY OF</p>
+          <p>CINEMA TECHNICAL STUDIES</p>
         </div>
 
-        {/* Tagline */}
-        <div className="macts-tagline">
-          LEARN CINEMA. CREATE TOMORROW.
+        <div className="luxury-tagline">
+          LEARN CINEMA. <span>CREATE TOMORROW.</span>
         </div>
 
-        {/* Loading progress */}
-        <div className="macts-progress-section">
-          <div className="macts-progress-heading">
-            <span>INITIALIZING EXPERIENCE</span>
-            <span className="macts-progress-number">
-              {Math.floor(progress)}%
-            </span>
+        {/* Progress */}
+        <div className="luxury-progress">
+          <div className="progress-labels">
+            <span>YOUR CINEMATIC EXPERIENCE</span>
+            <span>{Math.floor(progress)}%</span>
           </div>
-          <div
-            className="macts-progress-track"
-            role="progressbar"
-            aria-valuenow={Math.floor(progress)}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          >
+
+          <div className="progress-track">
             <div
-              className="macts-progress-fill"
+              className="progress-value"
               style={{ width: `${progress}%` }}
-            >
-              <div className="macts-progress-shine" />
-            </div>
+            />
+          </div>
+
+          <div className="progress-caption">
+            {isReady ? "READY FOR THE SHOW" : "LIGHTS. CAMERA. ACTION."}
           </div>
         </div>
 
-        {/* Bottom message */}
-        <div className="macts-loading-message">
-          <span className="macts-loading-dot" />
-          {isReady ? "PREPARING YOUR EXPERIENCE" : "LIGHTS. CAMERA. ACTION."}
-        </div>
-      </div>
+      </main>
 
-      {/* Bottom branding */}
-      <div className="macts-bottom-brand">
+      <footer className="luxury-footer">
+        <span>MACTS FILM INSTITUTE</span>
+        <span className="footer-symbol">✦</span>
         <span>EST. MOONINRED</span>
-        <span className="macts-bottom-star">✦</span>
-        <span>THE ART OF CINEMA</span>
-      </div>
+      </footer>
     </div>
   );
 }
