@@ -1,369 +1,355 @@
 {
-    "courses":  [
-                    {
-                        "id":  "film-making",
-                        "title":  "Diploma in Film Making",
-                        "slug":  "diploma-in-film-making",
-                        "description":  "Understand filmmaking from concept development to the complete filmmaking process with practical film set experience.",
-                        "duration":  "3 Months",
-                        "mode":  "Live Classes via Zoom",
-                        "fee":  24999,
-                        "curriculum":  [
-                                           "Introduction to Filmmaking \u0026 Cinema History",
-                                           "Story Development \u0026 Narrative Arcs",
-                                           "Screenwriting \u0026 Character Dynamics",
-                                           "Directorial Vision \u0026 Actor Staging",
-                                           "Production Planning \u0026 Budgeting",
-                                           "Practical Filmmaking \u0026 Short Film Creation"
-                                       ],
-                        "thumbnail_url":  "/assets/course_film_making.jpg",
-                        "is_published":  true,
-                        "featured":  true
-                    },
-                    {
-                        "id":  "movie-editing",
-                        "title":  "Diploma in Movie Editing",
-                        "slug":  "diploma-in-movie-editing",
-                        "description":  "Understand the art of editing, visual storytelling, pacing and professional post-production workflows used in feature films.",
-                        "duration":  "3 Months",
-                        "mode":  "Live Classes via Zoom",
-                        "fee":  21999,
-                        "curriculum":  [
-                                           "Editing Fundamentals \u0026 Industry Workstations",
-                                           "Visual Storytelling \u0026 Narrative Rhythms",
-                                           "Advanced Editing Techniques \u0026 Montage",
-                                           "Continuity, Jump Cuts \u0026 Scene Transitions",
-                                           "Sound Synchronization, Foley \u0026 Audio Design",
-                                           "Post-production Workflow, Color Grading \u0026 Master Export"
-                                       ],
-                        "thumbnail_url":  "/assets/course_movie_editing.jpg",
-                        "is_published":  true,
-                        "featured":  true
-                    },
-                    {
-                        "id":  "cinematography",
-                        "title":  "Diploma in Cinematography",
-                        "slug":  "diploma-in-cinematography",
-                        "description":  "Explore camera operations, cinema lenses, dramatic three-point lighting, framing composition and visual aesthetic creation.",
-                        "duration":  "3 Months",
-                        "mode":  "Live Classes via Zoom",
-                        "fee":  24999,
-                        "curriculum":  [
-                                           "Camera Fundamentals \u0026 Sensor Science",
-                                           "Cine Lens Selection, Optics \u0026 Camera Settings",
-                                           "Lighting Techniques (Key, Fill, Rim \u0026 Practical Lighting)",
-                                           "Cinematic Composition \u0026 Rule of Thirds / Headroom",
-                                           "Camera Movement, Gimbals, Dollies \u0026 Handheld Rigging",
-                                           "Cinematography Practice \u0026 On-Set Lighting Rigs"
-                                       ],
-                        "thumbnail_url":  "/assets/course_cinematography.jpg",
-                        "is_published":  true,
-                        "featured":  true
-                    },
-                    {
-                        "id":  "film-production",
-                        "title":  "Diploma in Film Production",
-                        "slug":  "diploma-in-film-production",
-                        "description":  "Learn the planning, scheduling, financing, coordination and executive management behind successful commercial \u0026 indie films.",
-                        "duration":  "3 Months",
-                        "mode":  "Live Classes via Zoom",
-                        "fee":  19999,
-                        "curriculum":  [
-                                           "Film Production Fundamentals \u0026 Producer Roles",
-                                           "Budgeting, Line Items \u0026 Cost Estimation",
-                                           "Production Planning \u0026 Location Scouting",
-                                           "Crew Management, Unions \u0026 Call Sheets",
-                                           "Scheduling \u0026 Production Logistics",
-                                           "Post-production Supervision, OTT Pitching \u0026 Distribution"
-                                       ],
-                        "thumbnail_url":  "/assets/course_film_production.jpg",
-                        "is_published":  true,
-                        "featured":  true
-                    }
-                ],
-    "workshops":  [
-                      {
-                          "id":  "editing-kalaivanan-dec-2026",
-                          "title":  "Film Editing Workshop By Editor Kalaivanan",
-                          "slug":  "film-editing-workshop-kalaivanan",
-                          "mentor":  "Editor Kalaivanan",
-                          "description":  "Join an industry-focused film editing workshop and gain practical insights into the craft of cinematic editing. Learn feature film pacing, editing subtext, managing complex multi-cam timelines and storytelling secrets directly from celebrated editor Kalaivanan.",
-                          "month":  "December 2026",
-                          "event_date":  "2026-12-19",
-                          "start_time":  "10:00 AM",
-                          "end_time":  "05:00 PM",
-                          "fee":  1499,
-                          "seat_capacity":  50,
-                          "booked_seats":  38,
-                          "registration_deadline":  "2026-12-15",
-                          "banner_url":  "/assets/workshop_editor.jpg",
-                          "venue_or_online_details":  "MACTS Cinema Studio \u0026 Live Interactive Stream (Chennai / Online)",
-                          "is_published":  true
-                      }
-                  ],
-    "mentors":  [
-                    {
-                        "id":  "mentor-1",
-                        "name":  "Editor Kalaivanan",
-                        "designation":  "Senior Film Editor \u0026 Post-Production Specialist",
-                        "biography":  "With extensive experience across critically acclaimed and commercial feature films, Kalaivanan specializes in pacing, visual rhythm and narrative cutting.",
-                        "experience":  "18+ Years Industry Experience",
-                        "image_url":  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "mentor-2",
-                        "name":  "K. Balaji ISC",
-                        "designation":  "Director of Photography \u0026 Cinematographer",
-                        "biography":  "Renowned for moody chiaroscuro lighting and bold camera movements on prominent South Indian cinema and international festival circuits.",
-                        "experience":  "15+ Years in Feature Films \u0026 OTT",
-                        "image_url":  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "mentor-3",
-                        "name":  "S. Arvind Raj",
-                        "designation":  "Screenwriter \u0026 Creative Producer",
-                        "biography":  "Writer behind engaging indie dramas and theatrical thrillers, specializing in screenwriting discipline, dialogue rhythms and script pitching.",
-                        "experience":  "12+ Years in Story Development",
-                        "image_url":  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "mentor-4",
-                        "name":  "R. Vigneshwar",
-                        "designation":  "Executive Producer \u0026 Line Producer",
-                        "biography":  "Expert in large-scale film logistics, international location permits, budgets, and distribution coordination across leading production houses.",
-                        "experience":  "14+ Years in Film Production",
-                        "image_url":  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    }
-                ],
-    "testimonials":  [
-                         {
-                             "id":  "test-1",
-                             "student_name":  "Aditya Ramanathan",
-                             "course_name":  "Diploma in Film Making",
-                             "testimonial":  "The sessions were practical, insightful and truly inspiring. MACTS gave me clarity and confidence in my film journey. Learning directly from industry directors was a turning point.",
-                             "image_url":  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format\u0026fit=crop\u0026w=200\u0026q=80",
-                             "is_published":  true
-                         },
-                         {
-                             "id":  "test-2",
-                             "student_name":  "Priyanka Sundaram",
-                             "course_name":  "Diploma in Movie Editing",
-                             "testimonial":  "The detailed breakdowns of timeline cutting and sound transitions transformed the way I look at footage. I recently finished my first short film as lead editor!",
-                             "image_url":  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format\u0026fit=crop\u0026w=200\u0026q=80",
-                             "is_published":  true
-                         },
-                         {
-                             "id":  "test-3",
-                             "student_name":  "Dinesh Karthik",
-                             "course_name":  "Film Editing Workshop",
-                             "testimonial":  "Editor Kalaivanan sir explained how to cut emotions rather than just cutting footage. The live scene breakdown was worth every single minute.",
-                             "image_url":  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format\u0026fit=crop\u0026w=200\u0026q=80",
-                             "is_published":  true
-                         }
-                     ],
-    "previous_classes":  [
-                             {
-                                 "id":  "class-1",
-                                 "title":  "Screenplay Breakdown \u0026 Visual Language Masterclass",
-                                 "mentor_name":  "Director S. Arvind Raj",
-                                 "date":  "October 2026",
-                                 "image_url":  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
-                                 "video_url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                                 "is_published":  true
-                             },
-                             {
-                                 "id":  "class-2",
-                                 "title":  "Hands-on Lighting Rigs \u0026 Sensor Exposure Workshop",
-                                 "mentor_name":  "Cinematographer K. Balaji ISC",
-                                 "date":  "September 2026",
-                                 "image_url":  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format\u0026fit=crop\u0026w=800\u0026q=80",
-                                 "is_published":  true
-                             }
-                         ],
-    "gallery":  [
-                    {
-                        "id":  "gal-1",
-                        "title":  "Cinema Camera Rigging Session",
-                        "category":  "Cinematography",
-                        "image_url":  "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "gal-2",
-                        "title":  "Director \u0026 Actor Staging on Set",
-                        "category":  "Direction",
-                        "image_url":  "https://images.unsplash.com/photo-1533563906091-8dc89c823ea7?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "gal-3",
-                        "title":  "Feature Clapperboard \u0026 Slate",
-                        "category":  "Production",
-                        "image_url":  "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "gal-4",
-                        "title":  "Sunset Outdoor Camera Silhouette",
-                        "category":  "BTS",
-                        "image_url":  "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "gal-5",
-                        "title":  "Studio Lighting Setup",
-                        "category":  "Lighting",
-                        "image_url":  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    },
-                    {
-                        "id":  "gal-6",
-                        "title":  "Crew Brainstorming and Script Table Read",
-                        "category":  "Screenwriting",
-                        "image_url":  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format\u0026fit=crop\u0026w=600\u0026q=80",
-                        "is_published":  true
-                    }
-                ],
-    "course_registrations":  [
-                                 {
-                                     "id":  "03a83103-2236-436c-9924-219b82efa97f",
-                                     "registration_number":  "MACTS-CRG-652396-242",
-                                     "course_id":  "film-making",
-                                     "course_title":  "Diploma in Film Making",
-                                     "full_name":  "test",
-                                     "age":  25,
-                                     "gender":  "Male",
-                                     "mobile":  "+919962952097",
-                                     "whatsapp":  "9962952097",
-                                     "email":  "sathishkumar999199@gmail.com",
-                                     "city":  "Guduvancheri",
-                                     "current_status":  "Aspiring Filmmaker",
-                                     "filmmaking_interest":  "Yes",
-                                     "project_experience":  "No",
-                                     "interested_areas":  [
-                                                              "Direction"
-                                                          ],
-                                     "registration_fee":  24999,
-                                     "payment_method":  "RAZORPAY",
-                                     "transaction_id":  "",
-                                     "payment_status":  "PENDING",
-                                     "registration_status":  "SUBMITTED",
-                                     "created_at":  "2026-11-07T15:17:32.396Z"
-                                 },
-                                 {
-                                     "id":  "cr-demo-1",
-                                     "registration_number":  "CR-2026-001",
-                                     "course_id":  "film-making",
-                                     "course_title":  "Diploma in Film Making",
-                                     "full_name":  "Vikas Sundaram",
-                                     "age":  23,
-                                     "gender":  "Male",
-                                     "mobile_number":  "+91 98401 23456",
-                                     "email":  "vikas.sundaram@gmail.com",
-                                     "location":  "Chennai, Tamil Nadu",
-                                     "current_status":  "Aspiring Filmmaker",
-                                     "filmmaking_interest":  "Yes",
-                                     "previous_projects":  "Yes",
-                                     "interested_areas":  [
-                                                              "Direction",
-                                                              "Screenwriting"
-                                                          ],
-                                     "registration_fee":  24999,
-                                     "transaction_id":  "UTR-9872341298",
-                                     "payment_status":  "Verified",
-                                     "registration_status":  "Confirmed",
-                                     "consent_updates":  true,
-                                     "created_at":  "2026-11-05T14:24:11.461Z"
-                                 }
-                             ],
-    "workshop_registrations":  [
-                                   {
-                                       "id":  "wr-demo-1",
-                                       "registration_number":  "WR-2026-001",
-                                       "workshop_id":  "editing-kalaivanan-dec-2026",
-                                       "workshop_title":  "Film Editing Workshop By Editor Kalaivanan",
-                                       "full_name":  "Kavitha Ramachandran",
-                                       "age":  26,
-                                       "area_name":  "T. Nagar, Chennai",
-                                       "whatsapp_number":  "+91 88701 45678",
-                                       "email":  "kavitha.edit@gmail.com",
-                                       "cinema_industry_status":  "Independent Filmmaker",
-                                       "ticket_number":  "TKT-2026-DEC-001",
-                                       "amount_paid":  1499,
-                                       "payment_status":  "Paid",
-                                       "registration_status":  "Confirmed",
-                                       "created_at":  "2026-11-06T14:24:11.462Z"
-                                   }
-                               ],
-    "payments":  [
-                     {
-                         "id":  "pay-demo-1",
-                         "registration_id":  "wr-demo-1",
-                         "registration_type":  "workshop",
-                         "participant_name":  "Kavitha Ramachandran",
-                         "participant_email":  "kavitha.edit@gmail.com",
-                         "item_title":  "Film Editing Workshop By Editor Kalaivanan",
-                         "razorpay_order_id":  "order_test_908231823",
-                         "razorpay_payment_id":  "pay_test_8923482348",
-                         "amount":  1499,
-                         "currency":  "INR",
-                         "status":  "captured",
-                         "verified_at":  "2026-11-06T14:24:11.462Z",
-                         "created_at":  "2026-11-06T14:24:11.462Z"
-                     }
-                 ],
-    "tickets":  [
-                    {
-                        "id":  "tkt-demo-1",
-                        "ticket_number":  "TKT-2026-DEC-001",
-                        "workshop_id":  "editing-kalaivanan-dec-2026",
-                        "workshop_title":  "Film Editing Workshop By Editor Kalaivanan",
-                        "mentor_name":  "Editor Kalaivanan",
-                        "event_date":  "December 19, 2026 â€¢ 10:00 AM - 05:00 PM",
-                        "venue_details":  "MACTS Cinema Studio \u0026 Online Live Stream, Chennai",
-                        "participant_name":  "Kavitha Ramachandran",
-                        "participant_email":  "kavitha.edit@gmail.com",
-                        "participant_phone":  "+91 88701 45678",
-                        "qr_code_url":  "",
-                        "pdf_url":  "/api/tickets/download/TKT-2026-DEC-001",
-                        "amount_paid":  1499,
-                        "payment_id":  "pay_test_8923482348",
-                        "status":  "VALID",
-                        "issued_at":  "2026-11-06T14:24:11.462Z"
-                    }
-                ],
-    "enquiries":  [
-                      {
-                          "id":  "enq-demo-1",
-                          "full_name":  "Saravanan M",
-                          "email":  "saravanan.cinema@yahoo.com",
-                          "phone":  "+91 97890 12345",
-                          "subject":  "Inquiry regarding weekend batches for Cinematography",
-                          "message":  "Hi MACTS Team, do you offer weekend schedules for the 3-month Cinematography diploma? I work on weekdays and would love to join.",
-                          "status":  "New",
-                          "created_at":  "2026-11-07T02:24:11.462Z"
-                      }
-                  ],
-    "settings":  {
-                     "name":  "MACTS â€“ MoonInRed Academy of Cinema Technical Studies",
-                     "domain":  "https://mactsfilminstitute.com",
-                     "parent_brand":  "MoonInRed",
-                     "instagram":  "https://www.instagram.com/macts_official/",
-                     "email":  "mactsofficial@gmail.com",
-                     "contact_number":  "+91 88700 32122",
-                     "whatsapp_number":  "918870032122",
-                     "address":  "Chennai, Tamil Nadu, India",
-                     "razorpay_key_id":  "rzp_test_cinema12345678",
-                     "razorpay_key_secret_configured":  true,
-                     "resend_api_configured":  true,
-                     "whatsapp_cloud_configured":  true
-                 },
-    "admin":  {
-                  "username":  "admin@macts.com",
-                  "passwordHash":  "Cinema@MACTS2026"
-              }
+  "courses": [
+    {
+      "id": "film-making",
+      "title": "Diploma in Film Making",
+      "slug": "diploma-in-film-making",
+      "description": "Understand filmmaking from concept development to the complete filmmaking process with practical film set experience.",
+      "duration": "3 Months",
+      "mode": "Live Classes via Zoom",
+      "fee": 24999,
+      "curriculum": [
+        "Introduction to Filmmaking & Cinema History",
+        "Story Development & Narrative Arcs",
+        "Screenwriting & Character Dynamics",
+        "Directorial Vision & Actor Staging",
+        "Production Planning & Budgeting",
+        "Practical Filmmaking & Short Film Creation"
+      ],
+      "thumbnail_url": "/assets/course_film_making.jpg",
+      "is_published": true,
+      "featured": true
+    },
+    {
+      "id": "movie-editing",
+      "title": "Diploma in Movie Editing",
+      "slug": "diploma-in-movie-editing",
+      "description": "Understand the art of editing, visual storytelling, pacing and professional post-production workflows used in feature films.",
+      "duration": "3 Months",
+      "mode": "Live Classes via Zoom",
+      "fee": 21999,
+      "curriculum": [
+        "Editing Fundamentals & Industry Workstations",
+        "Visual Storytelling & Narrative Rhythms",
+        "Advanced Editing Techniques & Montage",
+        "Continuity, Jump Cuts & Scene Transitions",
+        "Sound Synchronization, Foley & Audio Design",
+        "Post-production Workflow, Color Grading & Master Export"
+      ],
+      "thumbnail_url": "/assets/course_movie_editing.jpg",
+      "is_published": true,
+      "featured": true
+    },
+    {
+      "id": "cinematography",
+      "title": "Diploma in Cinematography",
+      "slug": "diploma-in-cinematography",
+      "description": "Explore camera operations, cinema lenses, dramatic three-point lighting, framing composition and visual aesthetic creation.",
+      "duration": "3 Months",
+      "mode": "Live Classes via Zoom",
+      "fee": 24999,
+      "curriculum": [
+        "Camera Fundamentals & Sensor Science",
+        "Cine Lens Selection, Optics & Camera Settings",
+        "Lighting Techniques (Key, Fill, Rim & Practical Lighting)",
+        "Cinematic Composition & Rule of Thirds / Headroom",
+        "Camera Movement, Gimbals, Dollies & Handheld Rigging",
+        "Cinematography Practice & On-Set Lighting Rigs"
+      ],
+      "thumbnail_url": "/assets/course_cinematography.jpg",
+      "is_published": true,
+      "featured": true
+    },
+    {
+      "id": "film-production",
+      "title": "Diploma in Film Production",
+      "slug": "diploma-in-film-production",
+      "description": "Learn the planning, scheduling, financing, coordination and executive management behind successful commercial & indie films.",
+      "duration": "3 Months",
+      "mode": "Live Classes via Zoom",
+      "fee": 19999,
+      "curriculum": [
+        "Film Production Fundamentals & Producer Roles",
+        "Budgeting, Line Items & Cost Estimation",
+        "Production Planning & Location Scouting",
+        "Crew Management, Unions & Call Sheets",
+        "Scheduling & Production Logistics",
+        "Post-production Supervision, OTT Pitching & Distribution"
+      ],
+      "thumbnail_url": "/assets/course_film_production.jpg",
+      "is_published": true,
+      "featured": true
+    }
+  ],
+  "workshops": [
+    {
+      "id": "editing-kalaivanan-dec-2026",
+      "title": "Film Editing Workshop By Editor Kalaivanan",
+      "slug": "film-editing-workshop-kalaivanan",
+      "mentor": "Editor Kalaivanan",
+      "description": "Join an industry-focused film editing workshop and gain practical insights into the craft of cinematic editing. Learn feature film pacing, editing subtext, managing complex multi-cam timelines and storytelling secrets directly from celebrated editor Kalaivanan.",
+      "month": "December 2026",
+      "event_date": "2026-12-19",
+      "start_time": "10:00 AM",
+      "end_time": "05:00 PM",
+      "fee": 1499,
+      "seat_capacity": 50,
+      "booked_seats": 38,
+      "registration_deadline": "2026-12-15",
+      "banner_url": "/assets/workshop_editor.jpg",
+      "venue_or_online_details": "MACTS Cinema Studio & Live Interactive Stream (Chennai / Online)",
+      "is_published": true
+    }
+  ],
+  "mentors": [
+    {
+      "id": "mentor-1",
+      "name": "Editor Kalaivanan",
+      "designation": "Senior Film Editor & Post-Production Specialist",
+      "biography": "With extensive experience across critically acclaimed and commercial feature films, Kalaivanan specializes in pacing, visual rhythm and narrative cutting.",
+      "experience": "18+ Years Industry Experience",
+      "image_url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "mentor-2",
+      "name": "K. Balaji ISC",
+      "designation": "Director of Photography & Cinematographer",
+      "biography": "Renowned for moody chiaroscuro lighting and bold camera movements on prominent South Indian cinema and international festival circuits.",
+      "experience": "15+ Years in Feature Films & OTT",
+      "image_url": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "mentor-3",
+      "name": "S. Arvind Raj",
+      "designation": "Screenwriter & Creative Producer",
+      "biography": "Writer behind engaging indie dramas and theatrical thrillers, specializing in screenwriting discipline, dialogue rhythms and script pitching.",
+      "experience": "12+ Years in Story Development",
+      "image_url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "mentor-4",
+      "name": "R. Vigneshwar",
+      "designation": "Executive Producer & Line Producer",
+      "biography": "Expert in large-scale film logistics, international location permits, budgets, and distribution coordination across leading production houses.",
+      "experience": "14+ Years in Film Production",
+      "image_url": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "student_name": "Aditya Ramanathan",
+      "course_name": "Diploma in Film Making",
+      "testimonial": "The sessions were practical, insightful and truly inspiring. MACTS gave me clarity and confidence in my film journey. Learning directly from industry directors was a turning point.",
+      "image_url": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&q=80",
+      "is_published": true
+    },
+    {
+      "id": "test-2",
+      "student_name": "Priyanka Sundaram",
+      "course_name": "Diploma in Movie Editing",
+      "testimonial": "The detailed breakdowns of timeline cutting and sound transitions transformed the way I look at footage. I recently finished my first short film as lead editor!",
+      "image_url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+      "is_published": true
+    },
+    {
+      "id": "test-3",
+      "student_name": "Dinesh Karthik",
+      "course_name": "Film Editing Workshop",
+      "testimonial": "Editor Kalaivanan sir explained how to cut emotions rather than just cutting footage. The live scene breakdown was worth every single minute.",
+      "image_url": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=200&q=80",
+      "is_published": true
+    }
+  ],
+  "previous_classes": [
+    {
+      "id": "class-1",
+      "title": "Screenplay Breakdown & Visual Language Masterclass",
+      "mentor_name": "Director S. Arvind Raj",
+      "date": "October 2026",
+      "image_url": "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=800&q=80",
+      "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "is_published": true
+    },
+    {
+      "id": "class-2",
+      "title": "Hands-on Lighting Rigs & Sensor Exposure Workshop",
+      "mentor_name": "Cinematographer K. Balaji ISC",
+      "date": "September 2026",
+      "image_url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
+      "is_published": true
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gal-3",
+      "title": "Feature Clapperboard & Slate",
+      "category": "Production",
+      "image_url": "https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "gal-4",
+      "title": "Sunset Outdoor Camera Silhouette",
+      "category": "BTS",
+      "image_url": "https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "gal-5",
+      "title": "Studio Lighting Setup",
+      "category": "Lighting",
+      "image_url": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    },
+    {
+      "id": "gal-6",
+      "title": "Crew Brainstorming and Script Table Read",
+      "category": "Screenwriting",
+      "image_url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+      "is_published": true
+    }
+  ],
+  "course_registrations": [
+    {
+      "id": "03a83103-2236-436c-9924-219b82efa97f",
+      "registration_number": "MACTS-CRG-652396-242",
+      "course_id": "film-making",
+      "course_title": "Diploma in Film Making",
+      "full_name": "test",
+      "age": 25,
+      "gender": "Male",
+      "mobile": "+919962952097",
+      "whatsapp": "9962952097",
+      "email": "sathishkumar999199@gmail.com",
+      "city": "Guduvancheri",
+      "current_status": "Aspiring Filmmaker",
+      "filmmaking_interest": "Yes",
+      "project_experience": "No",
+      "interested_areas": [
+        "Direction"
+      ],
+      "registration_fee": 24999,
+      "payment_method": "RAZORPAY",
+      "transaction_id": "",
+      "payment_status": "PENDING",
+      "registration_status": "SUBMITTED",
+      "created_at": "2026-11-07T15:17:32.396Z"
+    },
+    {
+      "id": "cr-demo-1",
+      "registration_number": "CR-2026-001",
+      "course_id": "film-making",
+      "course_title": "Diploma in Film Making",
+      "full_name": "Vikas Sundaram",
+      "age": 23,
+      "gender": "Male",
+      "mobile_number": "+91 98401 23456",
+      "email": "vikas.sundaram@gmail.com",
+      "location": "Chennai, Tamil Nadu",
+      "current_status": "Aspiring Filmmaker",
+      "filmmaking_interest": "Yes",
+      "previous_projects": "Yes",
+      "interested_areas": [
+        "Direction",
+        "Screenwriting"
+      ],
+      "registration_fee": 24999,
+      "transaction_id": "UTR-9872341298",
+      "payment_status": "Verified",
+      "registration_status": "Confirmed",
+      "consent_updates": true,
+      "created_at": "2026-11-05T14:24:11.461Z"
+    }
+  ],
+  "workshop_registrations": [
+    {
+      "id": "wr-demo-1",
+      "registration_number": "WR-2026-001",
+      "workshop_id": "editing-kalaivanan-dec-2026",
+      "workshop_title": "Film Editing Workshop By Editor Kalaivanan",
+      "full_name": "Kavitha Ramachandran",
+      "age": 26,
+      "area_name": "T. Nagar, Chennai",
+      "whatsapp_number": "+91 88701 45678",
+      "email": "kavitha.edit@gmail.com",
+      "cinema_industry_status": "Independent Filmmaker",
+      "ticket_number": "TKT-2026-DEC-001",
+      "amount_paid": 1499,
+      "payment_status": "Paid",
+      "registration_status": "Confirmed",
+      "created_at": "2026-11-06T14:24:11.462Z"
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-demo-1",
+      "registration_id": "wr-demo-1",
+      "registration_type": "workshop",
+      "participant_name": "Kavitha Ramachandran",
+      "participant_email": "kavitha.edit@gmail.com",
+      "item_title": "Film Editing Workshop By Editor Kalaivanan",
+      "razorpay_order_id": "order_test_908231823",
+      "razorpay_payment_id": "pay_test_8923482348",
+      "amount": 1499,
+      "currency": "INR",
+      "status": "captured",
+      "verified_at": "2026-11-06T14:24:11.462Z",
+      "created_at": "2026-11-06T14:24:11.462Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "tkt-demo-1",
+      "ticket_number": "TKT-2026-DEC-001",
+      "workshop_id": "editing-kalaivanan-dec-2026",
+      "workshop_title": "Film Editing Workshop By Editor Kalaivanan",
+      "mentor_name": "Editor Kalaivanan",
+      "event_date": "December 19, 2026 â€¢ 10:00 AM - 05:00 PM",
+      "venue_details": "MACTS Cinema Studio & Online Live Stream, Chennai",
+      "participant_name": "Kavitha Ramachandran",
+      "participant_email": "kavitha.edit@gmail.com",
+      "participant_phone": "+91 88701 45678",
+      "qr_code_url": "",
+      "pdf_url": "/api/tickets/download/TKT-2026-DEC-001",
+      "amount_paid": 1499,
+      "payment_id": "pay_test_8923482348",
+      "status": "VALID",
+      "issued_at": "2026-11-06T14:24:11.462Z"
+    }
+  ],
+  "enquiries": [
+    {
+      "id": "enq-demo-1",
+      "full_name": "Saravanan M",
+      "email": "saravanan.cinema@yahoo.com",
+      "phone": "+91 97890 12345",
+      "subject": "Inquiry regarding weekend batches for Cinematography",
+      "message": "Hi MACTS Team, do you offer weekend schedules for the 3-month Cinematography diploma? I work on weekdays and would love to join.",
+      "status": "New",
+      "created_at": "2026-11-07T02:24:11.462Z"
+    }
+  ],
+  "settings": {
+    "name": "MACTS â€“ MoonInRed Academy of Cinema Technical Studies",
+    "domain": "https://mactsfilminstitute.com",
+    "parent_brand": "MoonInRed",
+    "instagram": "https://www.instagram.com/macts_official/",
+    "email": "mactsofficial@gmail.com",
+    "contact_number": "+91 88700 32122",
+    "whatsapp_number": "918870032122",
+    "address": "Chennai, Tamil Nadu, India",
+    "razorpay_key_id": "rzp_test_cinema12345678",
+    "razorpay_key_secret_configured": true,
+    "resend_api_configured": true,
+    "whatsapp_cloud_configured": true
+  },
+  "admin": {
+    "username": "admin@macts.com",
+    "passwordHash": "Cinema@MACTS2026"
+  }
 }
