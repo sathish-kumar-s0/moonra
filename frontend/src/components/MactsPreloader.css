@@ -1,0 +1,476 @@
+/* =========================================
+   MACTS CINEMATIC PRELOADER
+   Premium Black & Gold Theme
+========================================= */
+
+.macts-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(
+      ellipse at 50% 43%,
+      rgba(103, 68, 25, 0.2) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at center,
+      #12100c 0%,
+      #090909 55%,
+      #030303 100%
+    );
+  color: #fff;
+  isolation: isolate;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 850ms cubic-bezier(0.77, 0, 0.18, 1), visibility 850ms;
+}
+
+.macts-preloader.macts-exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Background texture */
+.macts-noise {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.macts-ambient {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.12;
+}
+
+.ambient-one {
+  background: #b88635;
+  top: -230px;
+  left: -180px;
+}
+
+.ambient-two {
+  background: #8d5c1e;
+  bottom: -250px;
+  right: -180px;
+}
+
+.macts-scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    #ffffff 4px
+  );
+}
+
+/* Main content */
+.macts-loader-content {
+  position: relative;
+  width: min(90%, 440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* =========================================
+   CAMERA APERTURE
+========================================= */
+
+.macts-aperture-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 34px;
+}
+
+.macts-aperture-glow {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: #c9a45c;
+  filter: blur(35px);
+  opacity: 0.2;
+  animation: macts-glow 3s ease-in-out infinite;
+}
+
+.macts-aperture-outer {
+  width: 112px;
+  height: 112px;
+  padding: 7px;
+  border: 1px solid rgba(201, 164, 92, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(201, 164, 92, 0.2),
+    inset 0 0 20px rgba(201, 164, 92, 0.12);
+  animation: macts-rotate 15s linear infinite;
+}
+
+.macts-aperture-ring {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #c9a45c;
+  background: #080808;
+}
+
+.macts-blades {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.macts-blade {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  left: 22%;
+  top: -4%;
+  background: linear-gradient(135deg, #e9c87c, #9b6c2d 50%, #3b2913);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 35% 65% );
+  opacity: 0.55;
+  transform-origin: 50% 100%;
+}
+
+.macts-aperture-center {
+  position: absolute;
+  inset: 25%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #17130c, #050505);
+  border: 1px solid #e3bd72;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #c9a45c55;
+}
+
+.macts-aperture-center span {
+  color: #e7c57e;
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #c9a45c;
+  animation: macts-letter-glow 3s ease-in-out infinite;
+}
+
+/* Orbital rings */
+.macts-orbit {
+  position: absolute;
+  border: 1px solid rgba(201, 164, 92, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 135px;
+  height: 135px;
+  animation: macts-rotate 20s linear infinite reverse;
+}
+
+.orbit-two {
+  width: 155px;
+  height: 155px;
+  border-style: dashed;
+  opacity: 0.45;
+  animation: macts-rotate 35s linear infinite;
+}
+
+/* =========================================
+   BRANDING
+========================================= */
+
+.macts-brand {
+  margin-top: 8px;
+  animation: macts-enter 1s ease both;
+}
+
+.macts-logo {
+  font-family: Georgia, serif;
+  font-size: clamp(52px, 10vw, 72px);
+  font-weight: 700;
+  letter-spacing: 11px;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(201, 164, 92, 0.16);
+}
+
+.macts-logo span {
+  color: #d6ae62;
+}
+
+.macts-brand-line {
+  width: 100px;
+  height: 2px;
+  background: rgba(201, 164, 92, 0.2);
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.macts-brand-line span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f5d68e,
+    transparent
+  );
+  animation: macts-line 2s ease-in-out infinite;
+}
+
+.macts-academy-name {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 3.5px;
+  font-weight: 500;
+  color: #d6c6a5;
+  line-height: 1.8;
+}
+
+.second-line {
+  color: #9e9689;
+}
+
+/* Tagline */
+.macts-tagline {
+  margin-top: 28px;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #e1bd77;
+  animation: macts-enter 1.2s ease both;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.macts-progress-section {
+  width: 230px;
+  margin-top: 48px;
+}
+
+.macts-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 9px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1.6px;
+  color: #a79c87;
+}
+
+.macts-progress-number {
+  color: #e4c27e;
+  font-variant-numeric: tabular-nums;
+}
+
+.macts-progress-track {
+  height: 2px;
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.macts-progress-fill {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #80602c,
+    #e8c477,
+    #fff1c5
+  );
+  box-shadow: 0 0 12px #c9a45c;
+  transition: width 150ms linear;
+}
+
+.macts-progress-shine {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: #fff;
+  filter: blur(5px);
+}
+
+/* Loading text */
+.macts-loading-message {
+  margin-top: 22px;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: #c9a45c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.macts-loading-dot {
+  width: 5px;
+  height: 5px;
+  background: #e4bd70;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #e4bd70;
+  animation: macts-dot 1.2s ease-in-out infinite;
+}
+
+/* Footer */
+.macts-bottom-brand {
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #706957;
+}
+
+.macts-bottom-star {
+  color: #c9a45c;
+  font-size: 13px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes macts-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes macts-glow {
+  0%,
+  100% {
+    opacity: 0.12;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.32;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes macts-letter-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px #c9a45c;
+  }
+  50% {
+    text-shadow: 0 0 25px #e9c87c, 0 0 40px #c9a45c;
+  }
+}
+
+@keyframes macts-line {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes macts-dot {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+@keyframes macts-enter {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+  .macts-aperture-wrapper {
+    transform: scale(0.85);
+    margin-bottom: 24px;
+  }
+
+  .macts-logo {
+    font-size: 53px;
+    letter-spacing: 8px;
+  }
+
+  .macts-academy-name {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .macts-tagline {
+    font-size: 10px;
+    letter-spacing: 1.4px;
+  }
+
+  .macts-progress-section {
+    width: 200px;
+    margin-top: 38px;
+  }
+
+  .macts-bottom-brand {
+    bottom: 22px;
+    gap: 10px;
+    font-size: 7px;
+  }
+}
+
+@media (max-height: 600px) {
+  .macts-loader-content {
+    transform: scale(0.75);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .macts-preloader *,
+  .macts-preloader *::before,
+  .macts-preloader *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

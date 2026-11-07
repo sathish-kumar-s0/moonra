@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { WhatsAppButton } from './components/common/WhatsAppButton';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import MactsPreloader from './components/MactsPreloader';
+import { api } from './services/api';
 
 // Public Pages
 import { Home } from './pages/Home';
@@ -77,8 +79,48 @@ const ExternalRedirect: React.FC<{ to: string }> = ({ to }) => {
 };
 
 export const App: React.FC = () => {
+  const [isReady, setIsReady] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    async function initializeExperience() {
+      try {
+        // Wait for essential fonts to load
+        if (document.fonts) {
+          await document.fonts.ready;
+        }
+
+        // Initialize critical background data & enforce smooth cinematic pacing
+        const minPacingTimer = new Promise((resolve) => setTimeout(resolve, 950));
+        await Promise.allSettled([
+          api.get('/courses'),
+          api.get('/workshops'),
+          api.get('/mentors'),
+          minPacingTimer
+        ]);
+      } catch (error) {
+        console.error("MACTS initialization error:", error);
+      } finally {
+        if (active) setIsReady(true);
+      }
+    }
+
+    initializeExperience();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const handlePreloaderComplete = useCallback(() => {
+    setShowPreloader(false);
+  }, []);
+
   return (
     <AuthProvider>
+      {showPreloader && (
+        <MactsPreloader isReady={isReady} onComplete={handlePreloaderComplete} />
+      )}
       <BrowserRouter>
         <Routes>
           {/* Public Routes with Navbar & Footer */}
