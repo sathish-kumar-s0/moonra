@@ -27,13 +27,91 @@
 
 /* Subtle Film Grain Overlay */
 .film-grain {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
-/* Cinematic Glow Accents */
+/* Cinematic Anamorphic Light Sweep Effect */
+@keyframes light-sweep {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.group:hover .animate-light-sweep {
+  animation: light-sweep 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 35mm Vintage Film Reel Rotation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 22s linear infinite;
+}
+
+/* Studio Breathing Spotlight */
+@keyframes studio-pulse {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.08);
+  }
+}
+
+.animate-studio-pulse {
+  animation: studio-pulse 7s ease-in-out infinite;
+}
+
+/* Film Dust / Particle Float */
+@keyframes float-particle {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-25px) translateX(12px);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translateY(-50px) translateX(-8px);
+    opacity: 0;
+  }
+}
+
+.animate-float-1 {
+  animation: float-particle 6s ease-in-out infinite;
+}
+.animate-float-2 {
+  animation: float-particle 8s ease-in-out infinite 2s;
+}
+.animate-float-3 {
+  animation: float-particle 10s ease-in-out infinite 4s;
+}
+
+/* Cinema Glow Accents */
 .cinema-red-glow {
-  box-shadow: 0 0 35px -5px rgba(197, 34, 34, 0.45);
+  box-shadow: 0 0 35px -5px rgba(208, 35, 43, 0.45);
 }
 
 .cinema-gold-glow {
@@ -42,7 +120,7 @@
 
 /* Text glow */
 .text-glow-red {
-  text-shadow: 0 0 20px rgba(197, 34, 34, 0.6);
+  text-shadow: 0 0 20px rgba(208, 35, 43, 0.6);
 }
 
 .text-glow-gold {

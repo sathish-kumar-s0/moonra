@@ -6,12 +6,16 @@ export const Navbar: React.FC = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+      setScrollProgress(progress);
       setScrolled(window.scrollY > 15);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -29,11 +33,17 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-200 ${
+    <header className={`sticky top-0 z-50 w-full transition-all duration-200 relative ${
       scrolled 
         ? 'bg-[#07080A]/95 backdrop-blur-md border-b border-[#1A1C24] shadow-2xl' 
         : 'bg-[#07080A] border-b border-[#14161C]'
     }`}>
+      {/* Top Golden Laser Scroll Progress Indicator */}
+      <div 
+        className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#8A642E] via-[#F1D28E] to-[#FFF3C9] transition-all duration-75 ease-out shadow-[0_0_8px_#D5AE68] pointer-events-none z-50" 
+        style={{ width: `${scrollProgress}%` }} 
+      />
+
       <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-14 xl:px-18">
         <div className="flex items-center justify-between h-20">
           
